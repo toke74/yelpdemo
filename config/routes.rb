@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :reviews, except: [:show, :index]
   
+
   devise_for :users
 
-  resources :restaurants
+  resources :restaurants do 
+  	resources :reviews, except: [:show, :index]
+  end
 
   get 'about', to: 'pages#about'
 
