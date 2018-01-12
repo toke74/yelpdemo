@@ -1,5 +1,8 @@
 class Restaurant < ApplicationRecord
+
 	mount_uploader :image, ImageUploader
+
+	searchkick
 
 	has_many :reviews
 
